@@ -1,131 +1,1066 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Verona ✈ Helsinki — Una fuga nordica</title>
+<title>✈ Anniversario 7 anni — Si viaggiaaaaa ♥</title>
+
 <style>
-  :root{--ink:#18243d;--pink:#ff6687;--yellow:#ffd66b;--blue:#8dd9f2;--cream:#fff8e9}
-  *{box-sizing:border-box}
-  html{width:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-  body{width:100%;min-width:0}
-  img,svg{max-width:100%;height:auto}
-  button{touch-action:manipulation;min-height:44px}
-  body{margin:0;background:#18243d;color:var(--ink);font-family:Trebuchet MS,Arial,sans-serif;min-height:100vh;display:grid;place-items:center;padding:22px}
-  .page{width:min(100%,1000px);background:var(--cream);border:4px solid #111b30;border-radius:18px;overflow:hidden;box-shadow:10px 10px 0 #0b1222;position:relative}
-  .top{padding:20px 24px 12px;text-align:center;background:var(--yellow);border-bottom:3px solid #111b30}
-  .eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
-  h1{font-size:clamp(1.7rem,5vw,3.6rem);line-height:1;margin:9px 0 7px;text-shadow:3px 3px 0 white}
-  .subtitle{font-weight:700;font-size:clamp(.9rem,2vw,1.1rem)}
-  .scene{position:relative;background:linear-gradient(#91dff4 0 66%,#bde9a0 66%);height:440px;overflow:hidden;border-bottom:3px solid #111b30}
-  .sun{position:absolute;right:9%;top:30px;width:70px;height:70px;background:#ffdb65;border:3px solid #111b30;border-radius:50%;box-shadow:0 0 0 10px #ffe89a66}
-  .cloud{position:absolute;font-size:3.4rem;filter:drop-shadow(2px 3px 0 #111b3020);animation:clouds 22s linear infinite}
-  .c1{top:45px;left:-100px}.c2{top:120px;left:65%;animation-duration:30s;animation-delay:-12s;font-size:2.5rem}
-  @keyframes clouds{from{transform:translateX(-20px)}to{transform:translateX(1150px)}}
-  .mountains{position:absolute;bottom:34%;left:0;width:100%;height:150px;background:#82c8ba;clip-path:polygon(0 100%,0 80%,12% 32%,20% 65%,34% 12%,47% 72%,59% 25%,74% 70%,87% 20%,100% 70%,100% 100%)}
-  .ground{position:absolute;bottom:0;width:100%;height:35%;background:#a8dc8d;border-top:3px solid #111b30}
-  .ground:before{content:"";position:absolute;inset:20px 0;background:repeating-linear-gradient(90deg,transparent 0 65px,#76c17a 66px 69px)}
-  .city{position:absolute;bottom:22%;left:4%;font-weight:900;font-size:1.2rem;background:var(--cream);padding:7px 12px;border:3px solid #111b30;transform:rotate(-3deg);z-index:2}
-  .city.fin{left:auto;right:4%;bottom:22%;transform:rotate(3deg)}
-  .tower{position:absolute;bottom:35%;left:12%;font-size:4.5rem;z-index:2;filter:drop-shadow(3px 3px 0 #111b30)}
-  .snow{position:absolute;bottom:35%;right:11%;font-size:4.7rem;z-index:2;filter:drop-shadow(3px 3px 0 #111b30)}
-  .route{position:absolute;left:19%;right:19%;top:33%;height:120px;border-top:4px dashed #fff;border-radius:50%;transform:rotate(-8deg);filter:drop-shadow(1px 2px 0 #18243d);z-index:3}
-  .plane{position:absolute;left:16%;top:27%;font-size:3.5rem;z-index:5;transform:rotate(12deg);animation:flight 8s cubic-bezier(.4,0,.2,1) infinite;filter:drop-shadow(3px 4px 0 #18243d30)}
-  @keyframes flight{0%,8%{left:15%;top:28%;transform:rotate(10deg) scale(.85)}45%{left:47%;top:14%;transform:rotate(0deg) scale(1.05)}88%,100%{left:77%;top:29%;transform:rotate(-8deg) scale(.85)}}
-  .couple{position:absolute;left:7%;bottom:12%;z-index:4;display:flex;align-items:flex-end;gap:0;animation:boarding 8s ease-in-out infinite}
-  .person{position:relative;font-size:4rem;filter:drop-shadow(2px 3px 0 #18243d30);transform-origin:bottom center}
-  .person.p2{margin-left:-12px;animation:wave 1.3s ease-in-out infinite alternate}
-  @keyframes wave{from{transform:rotate(-4deg)}to{transform:rotate(5deg)}}
-  .suitcase{font-size:2rem;margin-left:-6px;margin-bottom:2px}
-  @keyframes boarding{0%,12%,100%{transform:translateX(0)}40%,70%{transform:translateX(18px)}}
-  .speech{position:absolute;left:29%;bottom:16%;z-index:6;background:white;border:3px solid #111b30;border-radius:14px;padding:10px 13px;font-weight:900;transform:rotate(-2deg);box-shadow:3px 3px 0 #111b30;font-size:clamp(.8rem,2vw,1rem);animation:pop 8s infinite}
-  @keyframes pop{0%,15%,100%{opacity:1;transform:scale(1) rotate(-2deg)}22%,72%{opacity:.2;transform:scale(.8) rotate(3deg)}80%{opacity:1;transform:scale(1) rotate(-2deg)}}
-  .ticket{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:18px 24px;background:#fffdf5;flex-wrap:wrap}
-  .airport{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.05rem}
-  .code{font-size:1.6rem;background:var(--blue);border:3px solid #111b30;padding:7px 10px;border-radius:8px}
-  .arrow{font-size:1.8rem}
-  .middle{text-align:center;flex:1;min-width:180px}
-  .middle strong{display:block;font-size:1.05rem}
-  .middle span{font-size:.85rem}
-  button{font:inherit;font-weight:900;color:#111b30;background:var(--pink);border:3px solid #111b30;border-radius:10px;padding:11px 16px;cursor:pointer;box-shadow:4px 4px 0 #111b30;transition:transform .15s,box-shadow .15s}
-  button:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #111b30}
-  .footer{background:#18243d;color:#fff;padding:12px 20px;text-align:center;font-size:.78rem;letter-spacing:.04em}
-  .stamp{position:absolute;right:18px;top:18px;transform:rotate(10deg);border:2px solid #18243d;padding:5px 8px;font-size:.7rem;font-weight:900;background:#fff;border-radius:4px}
-  .scene.boost .plane{animation-duration:3s}
-  .scene.boost .cloud{animation-duration:9s}
-  @media(max-width:600px){
-    body{padding:0;display:block;background:var(--cream)}
-    .page{width:100%;max-width:100%;border-width:0;border-radius:0;box-shadow:none}
-    .top{padding:22px 14px 16px}
-    h1{font-size:clamp(1.65rem,8vw,2.6rem);padding:0 4px}
-    .subtitle{max-width:28rem;margin:0 auto}
-    .scene{height:clamp(330px,105vw,420px)}
-    .tower{font-size:clamp(2.7rem,12vw,3.5rem);left:3%}
-    .snow{font-size:clamp(2.8rem,12vw,3.8rem);right:3%}
-    .city{font-size:.82rem;left:2%;bottom:18%;padding:6px 8px}
-    .city.fin{right:2%;bottom:18%;padding:6px 8px}
-    .couple{left:2%;bottom:10%}
-    .person{font-size:clamp(2.5rem,10vw,3.1rem)}
-    .suitcase{font-size:1.4rem}
-    .speech{left:31%;bottom:12%;max-width:43%;padding:8px 9px;font-size:.78rem}
-    .route{left:17%;right:17%;top:31%}
-    .plane{font-size:2.7rem}
-    .stamp{right:7px;top:7px;font-size:.54rem;padding:4px 5px}
-    .ticket{padding:16px 12px;gap:14px;justify-content:center}
-    .airport{gap:6px;font-size:.92rem}
-    .code{font-size:1.1rem;padding:6px}
-    .middle{order:3;flex-basis:100%;min-width:0}
-    #boost{order:4;width:100%;max-width:320px}
-    .footer{font-size:.68rem;line-height:1.5;padding:13px 15px}
+  :root {
+    --ink: #18243d;
+    --pink: #ff6687;
+    --yellow: #ffd66b;
+    --blue: #8dd9f2;
+    --cream: #fff8e9;
   }
-  @media(max-width:360px){
-    .eyebrow{font-size:.65rem}
-    .stamp{max-width:95px;line-height:1.2}
-    .scene{height:330px}
-    .speech{left:29%;max-width:46%;font-size:.7rem}
-    .airport{font-size:.82rem}
+
+  * { box-sizing: border-box; }
+
+  html {
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
-  @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+
+  body { width: 100%; min-width: 0; }
+
+  img, svg { max-width: 100%; height: auto; }
+
+  button { touch-action: manipulation; min-height: 44px; }
+
+  body {
+    margin: 0;
+    background: #18243d;
+    color: var(--ink);
+    font-family: Trebuchet MS, Arial, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 22px;
+  }
+
+  .page {
+    width: min(100%, 1000px);
+    background: var(--cream);
+    border: 4px solid #111b30;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 10px 10px 0 #0b1222;
+    position: relative;
+  }
+
+  .top {
+    padding: 20px 24px 12px;
+    text-align: center;
+    background: var(--yellow);
+    border-bottom: 3px solid #111b30;
+  }
+
+  .eyebrow {
+    font-size: .75rem;
+    font-weight: 900;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 5vw, 3.6rem);
+    line-height: 1;
+    margin: 9px 0 7px;
+    text-shadow: 3px 3px 0 white;
+  }
+
+  .subtitle {
+    font-weight: 700;
+    font-size: clamp(.9rem, 2vw, 1.1rem);
+  }
+
+  .scene {
+    position: relative;
+    background: #72cbe5;
+    overflow: hidden;
+    border-bottom: 3px solid #111b30;
+  }
+
+  .map-scene {
+    padding: 16px 18px 14px;
+    background: #fff8e9;
+  }
+
+  .map-heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: clamp(.9rem, 2.5vw, 1.2rem);
+    letter-spacing: .07em;
+    color: #18243d;
+    padding: 2px 0 12px;
+  }
+
+  .map-heading span {
+    display: block;
+    font-size: .75em;
+    color: #e34f70;
+    margin-top: 5px;
+  }
+
+  .map-art {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    border: 3px solid #18243d;
+    border-radius: 16px;
+    background: #72cbe5;
+    box-shadow: 5px 5px 0 #18243d;
+  }
+
+  .europe-map {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .flight-path {
+    stroke-dasharray: 9 12;
+    animation: pathflow 1.3s linear infinite;
+  }
+
+  @keyframes pathflow {
+    to { stroke-dashoffset: -42; }
+  }
+
+  .map-plane {
+    position: absolute;
+    left: 44%;
+    top: 46%;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    z-index: 4;
+    filter: drop-shadow(2px 3px 0 #18243d50);
+    transform: rotate(-38deg);
+    animation: mapflight 7s cubic-bezier(.45,.05,.55,.95) infinite;
+  }
+
+  @keyframes mapflight {
+    0%, 5% {
+      left: 43%;
+      top: 69%;
+      transform: rotate(-40deg) scale(.82);
+    }
+    35% {
+      left: 48%;
+      top: 48%;
+      transform: rotate(-25deg) scale(1);
+    }
+    68%, 88% {
+      left: 63%;
+      top: 23%;
+      transform: rotate(-35deg) scale(.92);
+    }
+    100% {
+      left: 43%;
+      top: 69%;
+      transform: rotate(-40deg) scale(.82);
+    }
+  }
+
+  .map-cloud {
+    position: absolute;
+    z-index: 2;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    opacity: .88;
+    animation: mapcloud 20s linear infinite;
+  }
+
+  .cloud-a { left: 6%; top: 22%; }
+
+  .cloud-b {
+    right: 7%;
+    top: 42%;
+    animation-duration: 28s;
+    animation-delay: -12s;
+  }
+
+  @keyframes mapcloud {
+    from { transform: translateX(-15px); }
+    to { transform: translateX(50px); }
+  }
+  
+  
+
+  .map-note {
+    position: absolute;
+    z-index: 3;
+    padding: 8px 12px;
+    border: 2px solid #18243d;
+    border-radius: 4px;
+    font-size: clamp(.65rem, 1.4vw, .9rem);
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 3px 3px 0 #18243d;
+    line-height: 1.35;
+  }
+
+  .note-left {
+    left: 2%;
+    top: 35%;
+    background: #ffd66b;
+    transform: rotate(-7deg);
+  }
+
+  .note-right {
+    right: 2%;
+    bottom: 10%;
+    background: #ffb9c9;
+    transform: rotate(5deg);
+  }
+
+  .map-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 14px 4px 0;
+    font-size: clamp(.65rem, 1.5vw, .85rem);
+    font-weight: 900;
+    color: #18243d;
+    text-align: center;
+  }
+
+  .ticket {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: #fffdf5;
+    flex-wrap: wrap;
+  }
+
+  .airport {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 1.05rem;
+  }
+
+  .code {
+    font-size: 1.6rem;
+    background: var(--blue);
+    border: 3px solid #111b30;
+    padding: 7px 10px;
+    border-radius: 8px;
+  }
+
+  .arrow { font-size: 1.8rem; }
+
+  .middle {
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .middle strong {
+    display: block;
+    font-size: 1.05rem;
+  }
+
+  .middle span { font-size: .85rem; }
+
+  button {
+    font: inherit;
+    font-weight: 900;
+    color: #111b30;
+    background: var(--pink);
+    border: 3px solid #111b30;
+    border-radius: 10px;
+    padding: 11px 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #111b30;
+    transition: transform .15s, box-shadow .15s;
+  }
+
+  button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #111b30;
+  }
+
+  button.button_game {
+    font: inherit;
+    font-weight: 900;
+    color: black;
+    display: none;
+    background: var(--yellow);
+    border: 3px solid #111b30;
+    border-radius: 10px;
+    padding: 11px 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #111b30;
+    transition: transform .15s, box-shadow .15s;
+  }
+
+  button.button_game:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #111b30;
+  }
+
+  .footer {
+    background: #18243d;
+    color: #fff;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: .78rem;
+    letter-spacing: .04em;
+  }
+
+  .stamp {
+    position: absolute;
+    right: 12px;
+    top: 18px;
+    transform: rotate(10deg);
+    border: 2px solid #18243d;
+    padding: 5px 8px;
+    font-size: .7rem;
+    font-weight: 900;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .scene.boost .map-plane { animation-duration: 2.5s; }
+
+  .scene.boost .flight-path { animation-duration: .35s; }
+
+  .scene.boost .map-cloud { animation-duration: 8s; }
+
+  /* QUIZ: visual style matching the original page */
+
+  .quiz {
+    padding: 24px;
+    background: var(--cream);
+    border-bottom: 3px solid #111b30;
+  }
+
+  .quiz-header { text-align: center; }
+
+  .quiz-sticker {
+    display: inline-block;
+    padding: 10px;
+    font-size: 2rem;
+    background: #ffb9c9;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .quiz h2 {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    margin: 16px 0 8px;
+  }
+
+  .quiz-header p {
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .quiz-progress {
+    height: 14px;
+    margin: 22px 0 8px;
+    background: white;
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  #quiz-progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--pink);
+    transition: width .3s ease;
+  }
+
+  #quiz-progress-text {
+    text-align: center;
+    font-size: .75rem;
+    font-weight: 900;
+    letter-spacing: .12em;
+    margin-bottom: 22px;
+  }
+
+  .quiz-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .question-number {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    font-weight: 900;
+  }
+
+  .quiz-question h3 {
+    margin: 4px 0;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    line-height: 1.4;
+  }
+
+  .quiz-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  button.quiz-choice {
+    width: 100%;
+    min-height: 52px;
+    text-align: left;
+    color: var(--ink);
+    background: #fffdf5;
+    padding: 14px;
+    line-height: 1.4;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  button.quiz-choice:hover:not(:disabled) {
+    background: var(--yellow);
+  }
+
+  button.quiz-choice:disabled {
+    cursor: default;
+    opacity: .85;
+  }
+
+  #quiz-feedback {
+    min-height: 48px;
+    padding-top: 16px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1.6;
+  }
+
+  #quiz-result {
+    text-align: center;
+    padding: 18px 0 6px;
+  }
+
+  .result-emoji { font-size: 2.4rem; }
+
+  .secret-message {
+    margin: 22px 0;
+    padding: 18px;
+    background: var(--yellow);
+    border: 3px dashed var(--ink);
+    border-radius: 12px;
+    font-weight: 900;
+    line-height: 1.8;
+  }
+
+  @media(max-width: 600px) {
+    body {
+      padding: 0;
+      display: block;
+      background: var(--cream);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 100%;
+      border-width: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .top { padding: 22px 14px 16px; }
+
+    h1 {
+      font-size: clamp(1.5rem, 7.6vw, 2.5rem);
+      padding: 0 4px;
+    }
+
+    .subtitle {
+      max-width: 28rem;
+      margin: 0 auto;
+    }
+
+    .map-scene { padding: 12px 9px 13px; }
+
+    .map-heading {
+      font-size: .9rem;
+      padding-bottom: 9px;
+    }
+
+    .map-art {
+      border-width: 2px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 #18243d;
+    }
+
+    .map-note {
+      padding: 5px 6px;
+      font-size: .62rem;
+      box-shadow: 2px 2px 0 #18243d;
+    }
+
+    .note-left { left: 2%; top: 45%; }
+
+    .note-right { right: 2%; bottom: 7%; }
+
+    .map-plane { font-size: 2rem; }
+
+    .map-caption {
+      padding-top: 11px;
+      gap: 6px;
+      font-size: .64rem;
+    }
+
+    .ticket {
+      padding: 16px 12px;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .airport {
+      gap: 6px;
+      font-size: .92rem;
+    }
+
+    .code {
+      font-size: 1.1rem;
+      padding: 6px;
+    }
+
+    .middle {
+      order: 3;
+      flex-basis: 100%;
+      min-width: 0;
+    }
+
+    #boost {
+      order: 4;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    #game {
+      order: 5;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .footer {
+      font-size: .68rem;
+      line-height: 1.5;
+      padding: 13px 15px;
+    }
+
+    .quiz { padding: 20px 14px; }
+
+    button.quiz-choice { font-size: .9rem; }
+  }
+
+  @media(max-width: 360px) {
+    .eyebrow { font-size: .65rem; }
+
+    .stamp {
+      max-width: 95px;
+      line-height: 1.2;
+    }
+
+    .map-heading { font-size: .78rem; }
+
+    .map-note {
+      font-size: .54rem;
+      padding: 4px;
+    }
+
+    .map-caption { font-size: .57rem; }
+  }
+
+  @media(prefers-reduced-motion: reduce) {
+    *, *:before, *:after {
+      animation: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  #airport-hel-code {
+	font-size: 1.1rem;
+	transition: font-size 3s ease;
+  }
+  
+  #airport-hel-text {
+      gap: 6px;
+      font-size: .92rem;
+	  transition: font-size 3s ease;
+    }
+  
 </style>
 </head>
+
 <body>
 <main class="page">
+
   <header class="top">
-    <div class="eyebrow">Una piccola grande fuga</div>
-    <h1>VERONA ✈ HELSINKI</h1>
-    <div class="subtitle">Due cuori, due trolley e una voglia matta di Nord!</div>
-    <div class="stamp">MISSIONE: SCANDINAVIA</div>
+    <h1><br>✈ WEEKENDINO VIAGGETTO ✈</h1>
+    <div class="subtitle">
+      Sette anni insieme, due zaini e una nuova destinazione!
+    </div>
+    <div class="stamp">ANNIVERSARIO: 7 ANNI</div>
   </header>
-  <section class="scene" id="scene" aria-label="Animazione di una coppia in viaggio da Verona a Helsinki">
-    <div class="sun"></div><div class="cloud c1">☁️</div><div class="cloud c2">☁️</div>
-    <div class="mountains"></div><div class="ground"></div>
-    <div class="tower" title="Verona">🏰</div><div class="snow" title="Helsinki">🏛️</div>
-    <div class="city">VERONA</div><div class="city fin">HELSINKI</div>
-    <div class="route"></div><div class="plane" aria-hidden="true">✈️</div>
-    <div class="couple" aria-hidden="true"><div class="person">🧑🏻</div><div class="person p2">👩🏼</div><div class="suitcase">🧳</div></div>
-    <div class="speech" id="speech">Passaporti? Check!<br>Voglia di partire? CHECK!</div>
+
+  <section class="scene map-scene" id="scene"
+    aria-label="Mappa stilizzata dell'Europa con volo da Verona verso una destinazione segreta nel Nord Europa">
+
+    <div class="map-heading">
+      LA ROTTA DELLA NOSTRA AVVENTURA
+      <span>✦ DESTINAZIONE ✦</span>
+    </div>
+
+    <div class="map-art" aria-hidden="true">
+      <svg class="europe-map" viewBox="0 0 800 480"
+        role="img" aria-label="Mappa illustrata e stilizzata dell'Europa">
+
+        <defs>
+          <pattern id="mapdots" width="18" height="18"
+            patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.3"
+              fill="#ffffff" opacity=".35"/>
+          </pattern>
+        </defs>
+
+        <rect width="800" height="480" rx="18" fill="#72cbe5"/>
+        <rect width="800" height="480" rx="18" fill="url(#mapdots)"/>
+
+        <!-- Simplified, intentionally illustrative land shapes -->
+        <g fill="#a9d878" stroke="#fff2c9" stroke-width="4"
+          stroke-linejoin="round">
+          <path d="M155 80 L205 44 267 56 291 91 278 124 310 151 290 184 256 188 242 226 211 246 196 216 167 207 153 176 124 158 131 122Z"/>
+          <path d="M260 192 L300 166 337 179 360 207 348 236 327 251 311 286 283 299 266 273 245 257 242 226Z"/>
+          <path d="M327 251 L354 228 386 233 408 257 394 280 375 301 361 333 342 350 329 322 309 303 311 286Z"/>
+          <path d="M361 333 L386 309 412 315 427 337 414 362 391 374 371 361Z"/>
+          <path d="M350 206 L376 166 414 154 441 124 474 130 493 103 526 109 542 83 575 91 600 67 637 79 655 111 632 138 606 145 591 176 563 184 551 213 522 219 503 248 473 255 454 279 427 269 408 257 386 233 360 235Z"/>
+          <path d="M206 246 L224 267 216 293 198 286 190 263Z"/>
+          <path d="M133 164 L112 181 95 169 105 148Z"/>
+          <path d="M428 337 L453 323 470 339 462 363 439 369 414 362Z"/>
+          <path d="M493 255 L515 239 536 250 528 273 505 282Z"/>
+          <path d="M574 184 L598 173 618 187 608 207 583 211Z"/>
+        </g>
+
+        <g fill="none" stroke="#fff2c9" stroke-width="2" opacity=".8">
+          <path d="M213 75 L230 125 211 169 242 226 M278 124 L253 155 290 184 M300 166 L327 201 311 286 M360 235 L394 208 414 154 M441 124 L457 174 427 209 454 279 M493 103 L504 158 473 196 503 248 M575 91 L565 137 591 176 M606 145 L632 138 618 187"/>
+        </g>
+
+        <g fill="#438b67" opacity=".9">
+          <path d="M446 94 l9 -18 9 18z M468 110 l8 -16 8 16z M523 139 l10 -20 10 20z M563 116 l9 -18 9 18z M597 105 l9 -18 9 18z M616 120 l8 -16 8 16z M379 257 l8 -16 8 16z M350 290 l8 -16 8 16z M395 340 l8 -16 8 16z"/>
+        </g>
+
+        <g font-family="Trebuchet MS, Arial, sans-serif"
+          font-weight="900" fill="#34536a" opacity=".85">
+          <text x="110" y="112" font-size="20">EUROPA</text>
+          <text x="506" y="303" font-size="15"
+            transform="rotate(-18 506 303)">ALPI</text>
+          <text x="573" y="59" font-size="13">NORD</text>
+        </g>
+
+        <!-- Flight path from northern Italy to a vague northern destination -->
+        <path class="flight-path"
+          d="M370 348 C350 292 418 268 435 221 S488 148 520 118"
+          fill="none" stroke="#fff" stroke-width="5"
+          stroke-linecap="round" stroke-dasharray="9 12"/>
+
+        <circle cx="370" cy="348" r="10"
+          fill="#ff6687" stroke="#fff" stroke-width="4"/>
+
+        <circle cx="520" cy="118" r="12"
+          fill="#ff6687" stroke="#fff" stroke-width="4"
+          stroke-dasharray="3 3"/>
+
+        <g font-family="Trebuchet MS, Arial, sans-serif"
+          font-weight="900">
+          <rect x="330" y="366" width="82" height="30"
+            rx="15" fill="#fff8e9" stroke="#23334a" stroke-width="2"/>
+          <text x="371" y="386" text-anchor="middle"
+            fill="#23334a" font-size="14">VERONA</text>
+
+          <rect id="svela-citta-rect" x="536" y="99" width="82" height="30" rx="15" fill="#fff8e9" stroke="#23334a" stroke-width="2"/>
+          <text id="svela-citta" x="577" y="119" text-anchor="middle" fill="#23334a" font-size="14">???</text>
+        </g>
+      </svg>
+
+      <div class="map-plane" aria-hidden="true">✈️</div>
+      <div class="map-cloud cloud-a">☁️</div>
+      <div class="map-cloud cloud-b">☁️</div>
+
+      <div class="map-note note-left">
+        Nuova meta,<br>stessa felicità ♥
+      </div>
+
+      <div class="map-note note-right">
+        La destinazione<br>la devi svelare tu 🤫
+      </div>
+    </div>
+
+    <div class="map-caption">
+      <span>📍 PARTENZA: VERONA</span>
+      <span>✈️ ROTTA VERSO IL NORD</span>
+      <span>🔒 ARRIVO: DA SCOPRIRE</span>
+    </div>
   </section>
+
   <section class="ticket">
-    <div class="airport"><span class="code">VRN</span><span>Verona</span></div>
-    <div class="middle"><strong>✦ IMBARCO IMMAGINARIO ✦</strong><span id="status">Destinazione: sauna, design e cinnamon rolls</span></div>
-    <div class="airport"><span>Helsinki</span><span class="code">HEL</span></div>
+    <div class="airport">
+      <span class="code">VRN</span>
+      <span>Verona</span>
+    </div>
+
+    <div class="middle">
+      <strong>✦ CITTA' TOP SECRET ✦</strong>
+      <span id="status">La destinazione si scopre solo giocando...</span>
+    </div>
+
+    <div class="airport">
+      <span id="airport-hel-text">???</span>
+      <span class="code" id="airport-hel-code">???</span>
+    </div>
+
     <button id="boost" type="button">Decollo turbo 🚀</button>
+
+    <button id="game" class="button_game" type="button"
+      style="display: none;">
+      Inizia a giocare
+    </button>
   </section>
-  <footer class="footer">FINE DELLA ROUTINE • INIZIO DELL’AVVENTURA · MADE WITH ♥ AND A LITTLE PIXEL NOSTALGIA</footer>
+
+  <!-- QUIZ: added here; the rest of the original page is preserved -->
+  <section id="quiz" class="quiz" style="display: none;">
+
+    <div class="quiz-header">
+      <div class="quiz-sticker">💌</div>
+      <h2>MISSIONE: SCOPRI LA META!</h2>
+      <p>Tre domande, tre possibilità, una sorpresa da scoprire! ♥</p>
+    </div>
+
+    <div class="quiz-progress">
+      <div id="quiz-progress-bar"></div>
+    </div>
+
+    <div id="quiz-progress-text">DOMANDA 1 DI 3</div>
+
+    <div id="quiz-content"></div>
+    <div id="quiz-feedback" aria-live="polite"></div>
+
+    <div id="quiz-result" style="display: none;">
+      <div class="result-emoji">🏆 ✈️ ♥</div>
+      <h2 id="quiz-result-message">MISSIONE COMPLETATA!</h2>
+      <p id="quiz-final-message"></p>
+
+      <div id="messaggio-risultato" class="secret-message">
+        🎒 Prepara lo zaino...<br>
+        Ma la destinazione è ancora TOP SECRET! 🤫
+      </div>
+
+      <button id="quiz-restart" type="button">Rigioca ♥</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    7 ANNI DI NOI ♥ • UNA SORPRESA DA RICORDARE · MADE WITH LOVE
+  </footer>
+
 </main>
+
 <script>
+  // ORIGINAL TURBO AND GAME CONTROLS
+
   const scene = document.getElementById('scene');
   const button = document.getElementById('boost');
   const status = document.getElementById('status');
-  const speech = document.getElementById('speech');
+  const game = document.getElementById('game');
+  const quiz = document.getElementById('quiz');
+  success = false;
+
   let turbo = false;
+
   button.addEventListener('click', () => {
     turbo = !turbo;
+
     scene.classList.toggle('boost', turbo);
-    button.textContent = turbo ? 'Rallenta, pilota! 🛬' : 'Decollo turbo 🚀';
-    status.textContent = turbo ? 'Velocità massima: le polpette finlandesi ci aspettano!' : 'Destinazione: sauna, design e cinnamon rolls';
-    speech.innerHTML = turbo ? 'Woohooo!<br>Rotta verso il Nord! ❄️' : 'Passaporti? Check!<br>Voglia di partire? CHECK!';
+
+    button.textContent = turbo
+      ? 'Rallenta, pilota! 🛬'
+      : 'Decollo turbo 🚀';
+
+    status.textContent = turbo
+      ? 'Velocità massima: la sorpresa ti aspetta!'
+      : 'La destinazione si scopre solo all’arrivo…';
+
+    game.style.display = turbo ? 'inline-block' : 'none';
+
+    if (!turbo) {
+      quiz.style.display = 'none';
+    }
+  });
+
+  // THREE SINGLE-CHOICE QUESTIONS
+
+  const quizQuestions = [
+    {
+      question: 'Qual è l’ingrediente fondamentale per un weekend perfetto?',
+      choices: [
+        '🧳 20kg di bagaglio in stiva',
+        '❤️ Del sano e giusto refrigerio',
+        '🍕 Pizza a volontà'
+      ],
+      correct: 1,
+      message: 'Esatto! L’importante è che non faccia caldo ♥'
+    },
+    {
+      question: 'Cosa sarebbe bello fare in questo viaggetto?',
+      choices: [
+        '🩴 Una sauna rigenerante e tonificante',
+		'📸 300 foto da mettere su Instagram',
+        '🧹 Le pulizie di casa prima di partire'
+      ],
+      correct: 0,
+      message: 'Esatto! Bisogna assolutamente saunificare e tonificare 🩴'
+    },
+    {
+      question: 'Quale di questi paesi ha il maggior numero di abitanti?',
+      choices: [
+        '🏠 Finlandia',
+        '🏠 Svezia',
+        '🏠 Danimarca'
+      ],
+      correct: 1,
+      message: 'Risposta corretta!!! Forse ci siamo quasi!!! 🏠'
+    }
+  ];
+
+  let quizIndex = 0;
+  let quizScore = 0;
+  let quizAnswered = false;
+
+  const quizContent = document.getElementById('quiz-content');
+  const quizFeedback = document.getElementById('quiz-feedback');
+  const quizProgress = document.getElementById('quiz-progress-bar');
+  const quizProgressText = document.getElementById('quiz-progress-text');
+  const quizResult = document.getElementById('quiz-result');
+  const quizResultMessage = document.getElementById('quiz-result-message');
+
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    quizAnswered = false;
+
+    quizProgress.style.width =
+      `${(quizIndex / quizQuestions.length) * 100}%`;
+
+    quizProgressText.textContent =
+      `DOMANDA ${quizIndex + 1} DI ${quizQuestions.length}`;
+
+    quizFeedback.innerHTML = '';
+
+    quizContent.innerHTML = `
+      <div class="quiz-question">
+        <span class="question-number">
+          ${String(quizIndex + 1).padStart(2, '0')}
+        </span>
+        <h3>${q.question}</h3>
+      </div>
+
+      <div class="quiz-choices">
+        ${q.choices.map((choice, index) => `
+          <button type="button"
+            class="quiz-choice"
+            data-choice="${index}">
+            ${choice}
+          </button>
+        `).join('')}
+      </div>
+    `;
+
+    quizContent.querySelectorAll('.quiz-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (quizAnswered) return;
+
+        quizAnswered = true;
+
+        const answer = Number(btn.dataset.choice);
+        const correct = answer === q.correct;
+
+        if (correct) quizScore++;
+
+        quizContent.querySelectorAll('.quiz-choice').forEach(choice => {
+          choice.disabled = true;
+        });
+
+        const message = document.createElement('p');
+
+        message.textContent = correct
+          ? q.message
+          : 'Ops! La prossima domanda è la tua occasione per rifarti 😜';
+
+        message.style.color = correct ? '#28734b' : '#b6425d';
+
+        quizFeedback.innerHTML = '';
+        quizFeedback.appendChild(message);
+
+        const next = document.createElement('button');
+        next.type = 'button';
+
+        next.textContent =
+          quizIndex < quizQuestions.length - 1
+            ? 'Prossima domanda →'
+            : 'Scopri il risultato ♥';
+
+        quizFeedback.appendChild(next);
+
+        next.addEventListener('click', () => {
+          quizIndex++;
+
+          if (quizIndex < quizQuestions.length) {
+            renderQuizQuestion();
+          } else {
+            showQuizResult();
+          }
+        });
+      });
+    });
+  }
+
+  function showQuizResult() {
+    quizContent.style.display = 'none';
+    quizFeedback.style.display = 'none';
+	if (quizScore == 3) {
+		quizResultMessage.textContent = 'MISSIONE COMPLETATA!'
+		document.getElementById('messaggio-risultato').innerHTML = '🎒 Ci sei quasi!! Ti sei meritata il regalo!!!';
+		document.getElementById('messaggio-risultato').innerHTML += '<br>';
+		document.getElementById('messaggio-risultato').innerHTML += 'Clicca sul pulsante e ti sarà svelato! 🤫';
+		success = true;
+		document.getElementById('quiz-restart').textContent = '✈ SVELAAA!!! ✈';
+	}
+	else {
+		quizResultMessage.textContent = 'DEVI RITENTARE!'
+	}
+    quizResult.style.display = 'block';
+	
+
+    
+	if (quizScore == 3) {
+		quizProgress.style.width = '100%';
+		quizProgressText.textContent = 'MISSIONE COMPLETATA!';
+	}
+	else {
+		quizScoreBar = quizScore * 33.333
+		quizProgress.style.width = `${quizScoreBar}` + '%';
+		quizProgressText.textContent = 'DEVI RITENTARE!!!';
+	};
+    
+
+    document.getElementById('quiz-final-message').textContent =
+      `${quizScore} risposte giuste su ${quizQuestions.length}! ` +
+      'Ma il vero premio è partire insieme per festeggiare i nostri 7 anni ♥';
+  }
+
+  // OPEN/CLOSE THE QUIZ USING THE ORIGINAL GAME BUTTON
+
+  game.addEventListener('click', () => {
+    const isHidden = getComputedStyle(quiz).display === 'none';
+
+    if (isHidden) {
+      quiz.style.display = 'block';
+      quizIndex = 0;
+      quizScore = 0;
+
+      quizContent.style.display = 'block';
+      quizFeedback.style.display = 'block';
+      quizResult.style.display = 'none';
+
+      renderQuizQuestion();
+
+      quiz.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      quiz.style.display = 'none';
+    }
+  });
+
+  // RESTART THE QUIZ
+
+  document.getElementById('quiz-restart').addEventListener('click', () => {
+  
+	if (quizScore != 3) {
+		quizIndex = 0;
+		quizScore = 0;
+
+		quizContent.style.display = 'block';
+		quizFeedback.style.display = 'block';
+		quizResult.style.display = 'none';
+
+		renderQuizQuestion();
+
+		quiz.scrollIntoView({
+		  behavior: 'smooth',
+		  block: 'start'
+		});
+	}
+	else {
+		quiz.style.display = 'none';
+		window.scrollTo(0, 0);
+		document.getElementById('svela-citta').textContent = 'Helsinki';
+		document.getElementById('svela-citta').style='font-size:30px;transition:5s;';
+		document.getElementById('svela-citta-rect').style.width='160';
+		document.getElementById('svela-citta-rect').style.height='50';
+		document.getElementById('svela-citta-rect').style.x=497;
+		document.getElementById('svela-citta-rect').style.y=84;
+		const airportCode = document.getElementById('airport-hel-code');
+
+		// Shrink immediately
+		airportCode.style.transition = 'none';
+		airportCode.style.fontSize = '0px';
+
+		// Apply the shrink before starting the transition
+		void airportCode.offsetHeight;
+
+		// Change the text while it is invisible
+		airportCode.textContent = 'HEL';
+		
+		// Grow to the original size over 3 seconds
+		airportCode.style.transition = 'font-size 3s ease';
+		airportCode.style.fontSize = '1.1rem';
+		
+		const airportText = document.getElementById('airport-hel-text');
+
+		// Shrink immediately
+		airportText.style.transition = 'none';
+		airportText.style.fontSize = '0px';
+
+		// Apply the shrink before starting the transition
+		void airportText.offsetHeight;
+
+		// Change the text while it is invisible
+		airportText.textContent = 'Helsinki';
+		
+		// Grow to the original size over 3 seconds
+		airportText.style.transition = 'font-size 3s ease';
+		airportText.style.fontSize = '.92rem';
+		
+		document.getElementById('boost').style.display = 'none';
+		document.getElementById('game').style.display = 'none';
+	}
   });
 </script>
+
 </body>
 </html>
