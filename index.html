@@ -556,6 +556,12 @@
       width: 100%;
       max-width: 320px;
     }
+	
+	#button-dettagli-hel {
+      order: 6;
+      width: 100%;
+      max-width: 320px;
+    }
 
     .footer {
       font-size: .68rem;
@@ -604,6 +610,67 @@
 	  transition: font-size 3s ease;
     }
   
+
+  /* Popup dettagli viaggio */
+  .travel-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    padding: 18px;
+    background: rgba(8, 15, 31, .78);
+    align-items: center;
+    justify-content: center;
+  }
+  .travel-modal.open { display: flex; }
+  .travel-modal-card {
+    width: min(100%, 560px);
+    max-height: min(88vh, 760px);
+    overflow-y: auto;
+    background: var(--cream);
+    color: var(--ink);
+    border: 4px solid #111b30;
+    border-radius: 16px;
+    box-shadow: 8px 8px 0 #0b1222;
+    padding: 22px;
+    position: relative;
+  }
+  .travel-modal-card h2 {
+    margin: 0 36px 8px 0;
+    font-size: clamp(1.35rem, 5vw, 2rem);
+  }
+  .travel-modal-card p { line-height: 1.5; }
+  .travel-detail {
+    background: #fffdf5;
+    border: 2px solid #18243d;
+    border-radius: 10px;
+    padding: 13px 15px;
+    margin: 12px 0;
+  }
+  .travel-detail strong { display: block; margin-bottom: 5px; }
+  .travel-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 13px;
+    border: 2px solid #111b30;
+    border-radius: 8px;
+    background: var(--blue);
+    color: var(--ink);
+    font-weight: 900;
+    text-decoration: none;
+  }
+  .travel-link:hover { text-decoration: underline; }
+  .travel-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    min-width: 42px;
+    padding: 5px 10px;
+    background: var(--pink);
+    font-size: 1.2rem;
+  }
+  .travel-note { font-size: .85rem; opacity: .85; }
+
 </style>
 </head>
 
@@ -723,7 +790,7 @@
       <span>Verona</span>
     </div>
 
-    <div class="middle">
+    <div class="middle" id="citta-top-secret-dettagli">
       <strong>✦ CITTA' TOP SECRET ✦</strong>
       <span id="status">La destinazione si scopre solo giocando...</span>
     </div>
@@ -739,6 +806,8 @@
       style="display: none;">
       Inizia a giocare
     </button>
+	
+	<button id="button-dettagli-hel" class="button-dettagli" style="display:none;">Dettagli</button>
   </section>
 
   <!-- QUIZ: added here; the rest of the original page is preserved -->
@@ -772,6 +841,48 @@
       <button id="quiz-restart" type="button">Rigioca ♥</button>
     </div>
   </section>
+
+
+  <!-- Popup con i dettagli del viaggio -->
+  <div id="travel-modal" class="travel-modal" role="dialog"
+       aria-modal="true" aria-labelledby="travel-modal-title">
+    <div class="travel-modal-card">
+      <button type="button" id="travel-modal-close" class="travel-modal-close"
+              aria-label="Chiudi dettagli">✕</button>
+      <h2 id="travel-modal-title">✈️ I dettagli del nostro weekendino</h2>
+      <p>Sette anni insieme: ecco le informazioni per il nostro viaggetto a Helsinki! ♥</p>
+
+      <div class="travel-detail">
+        <strong>🛫 ANDATA: Partenza — Bergamo (BGY)</strong>
+        <span><!-- Sostituisci con data e ora reali -->07/11/2026 05:55</span>
+        <strong>🛬 ANDATA: Arrivo — Helsinki (HEL)</strong>
+        <span><!-- Sostituisci con data e ora reali -->07/11/2026 10:00</span>
+      </div>
+	  
+	  <div class="travel-detail">
+        <strong>🛫 RITORNO: Partenza — Helsinki (HEL)</strong>
+        <span><!-- Sostituisci con data e ora reali -->08/11/2026 22:55</span>
+        <strong>🛬 RITORNO: Arrivo — Bergamo (BGY)</strong>
+        <span><!-- Sostituisci con data e ora reali -->09/11/2026 00:55</span>
+      </div>
+
+      <div class="travel-detail">
+        <strong>🛏️ Dove dormiamo</strong>
+        <span>La nostra struttura a Helsinki</span><br>
+        <!-- Sostituisci href="#" con il link Booking.com della struttura -->
+        <a class="travel-link" href="https://www.booking.com/hotel/fi/scandic-kallio.en-gb.html" target="_blank" rel="noopener noreferrer"
+           id="booking-accommodation-link">Apri la struttura su Booking.com ↗</a>
+      </div>
+
+      <div class="travel-detail">
+        <strong>🧖 Sauna Löyly</strong>
+        <span>Sauna finlandese sul mare: non dimentichiamo il costume!</span><br>
+        <a class="travel-link"
+           href="https://www.loylyhelsinki.fi/en"
+           target="_blank" rel="noopener noreferrer">Sauna Löyly ↗</a>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     7 ANNI DI NOI ♥ • UNA SORPRESA DA RICORDARE · MADE WITH LOVE
@@ -1058,8 +1169,39 @@
 		
 		document.getElementById('boost').style.display = 'none';
 		document.getElementById('game').style.display = 'none';
+		
+		document.getElementById('citta-top-secret-dettagli').innerHTML = '';
+		document.getElementById('button-dettagli-hel').style.display = 'inline';
 	}
   });
+
+  // Popup dei dettagli del viaggio
+  const detailsButton = document.getElementById('button-dettagli-hel');
+  const travelModal = document.getElementById('travel-modal');
+  const closeTravelModal = document.getElementById('travel-modal-close');
+
+  detailsButton.addEventListener('click', () => {
+    travelModal.classList.add('open');
+    closeTravelModal.focus();
+  });
+
+  function hideTravelModal() {
+    travelModal.classList.remove('open');
+    detailsButton.focus();
+  }
+
+  closeTravelModal.addEventListener('click', hideTravelModal);
+
+  travelModal.addEventListener('click', (event) => {
+    if (event.target === travelModal) hideTravelModal();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && travelModal.classList.contains('open')) {
+      hideTravelModal();
+    }
+  });
+
 </script>
 
 </body>
